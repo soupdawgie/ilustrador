@@ -1,4 +1,5 @@
 require 'erb'
+require 'yaml'
 require 'imgkit'
 require 'securerandom'
 require_relative 'ilustrador/layout'

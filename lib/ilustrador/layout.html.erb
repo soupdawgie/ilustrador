@@ -1,3 +1,5 @@
+<!-- edit colors, fonts, etc here -->
+
 <style>
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
@@ -5,8 +7,8 @@
   position: absolute;
   left: 0px;
   top: 0px;
-  width: <%= RES[:fb][0] %>px;
-  height: <%= RES[:fb][1] %>px;
+  width: <%= size(:w) %>px;
+  height: <%= size(:h) %>px;
   text-align: center;
   font-size: 18px;
   font-family: 'Raleway', sans-serif;
@@ -16,14 +18,16 @@
 
 .category {
   float: left;
-  margin-left: 5px;
+  margin-left: 1%;
 }
 
 h1 {
   display: block;
-  margin-top: 90px;
+  margin-top: 23%;
 }
 </style>
+
+<!-- edit layout and param sequence here -->
 
 <div class="container">
   <p class="category"><%= category %></p>

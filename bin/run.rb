@@ -12,6 +12,6 @@ require './lib/ilustrador'
   # example link: http://localhost:4567/generate/type=fb&category=Movies&text=Watch the new trailer for Star Trek: Beyond
 
 get '/generate/type=:type&category=:category&text=:text' do
-  layout = Layout.new(params[:type], params[:category], params[:text])
+  layout = Ilustrador::Layout.new(params)
   send_file layout.image
 end
