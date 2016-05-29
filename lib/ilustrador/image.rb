@@ -1,5 +1,10 @@
+require 'erb'
+require 'yaml'
+require 'imgkit'
+require 'securerandom'
+
 module Ilustrador
-  class Layout
+  class Image
     LAYOUT = File.read('lib/ilustrador/layout.html.erb')
     CONFIG = YAML.load_file('config/config.yaml')
     attr_reader :type, :text, :category
@@ -19,12 +24,12 @@ module Ilustrador
       return CONFIG['size'][type][1] if value == :h
     end
 
-    def page
+    def layout
       ERB.new(LAYOUT).result(binding)
     end
 
-    def image
-      kit = IMGKit.new(page, quality: 100, width: size(:w))
+    def result
+      kit = IMGKit.new(layout, quality: 100, width: size(:w))
       kit.to_png
       kit.to_file("public/#{file_name}.png")
     end

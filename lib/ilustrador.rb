@@ -1,5 +1,1 @@
-require 'erb'
-require 'yaml'
-require 'imgkit'
-require 'securerandom'
-require_relative 'ilustrador/layout'
+require_relative 'ilustrador/image'
