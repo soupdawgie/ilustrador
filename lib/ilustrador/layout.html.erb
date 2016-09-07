@@ -1,0 +1,72 @@
+<doctype HTML>
+<html>
+  <meta charset='utf-8'>
+  <head>
+  </head>
+  <style>
+    @font-face {
+      font-family: 'Casper';
+      src: url('/Users/vmasko/workspace/jvlife_card/Casper.ttf');
+    }
+    @font-face {
+      font-family: 'Bitter';
+      src: url('/Users/vmasko/workspace/jvlife_card/Bitter-Regular.ttf');
+    }
+    html {
+      color: #FFF;
+    }
+    .background {
+      width: 1100px;
+      height: 550px;
+      padding: 70px 40px 30px 40px;
+      background: #F4EED8;
+    }
+    .card {
+      display: block;
+      width: 1010px;
+      height: 470px;
+      padding: 30px 40px 0px 40px;
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.45),
+          rgba(0, 0, 0, 0.45)
+        ),
+        url(<%= image %>);
+      box-shadow:  0px 10px 26px 0px rgba(0,0,0,0.17);
+    }
+    .section {
+      display: inline-block;
+      clear: both;
+      font-family: Casper;
+      font-size: 26px;
+    }
+    .title {
+      font-family: Bitter;
+      font-size: 48px;
+      margin-top: 142px;
+      margin-left: 110px;
+      width: 825px;
+    }
+    .logo {
+      margin-top: -5px;
+      display: inline-block;
+      clear: both;
+      float: right;
+    }
+  </style>
+  <body>
+    <div class='background'>
+      <div class='card'>
+        <div class='section'>
+          <%= section %>
+        </div>
+        <div class='logo'>
+          <img src='/Users/vmasko/workspace/jvlife_card/logo.png'>
+        </div>
+        <div class='title'>
+          <%= title %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
