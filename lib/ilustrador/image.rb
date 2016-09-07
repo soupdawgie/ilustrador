@@ -15,7 +15,7 @@ module Ilustrador
       @type    = params[:type]
       @title   = params[:text]
       @section = params[:category]
-      @image   = Base64.decode64(params[:image])
+      @image   = 'https://jvlife.ru' + Base64.urlsafe_decode64(params[:image])
     end
 
     def file_name
