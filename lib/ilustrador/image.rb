@@ -15,7 +15,7 @@ module Ilustrador
       @type    = params[:type]
       @title   = params[:text]
       @section = params[:category]
-      @image   = 'https://jvlife.ru' + Base64.urlsafe_decode64(params[:image])
+      @image   = 'https://www.jvlife.ru' + Base64.urlsafe_decode64(params[:image])
     end
 
     def file_name
@@ -32,9 +32,10 @@ module Ilustrador
     end
 
     def result
-      kit = IMGKit.new(layout, quality: 100, width: size(:w))
-      kit.to_png
-      kit.to_file("public/#{file_name}.png")
+      # kit = IMGKit.new(layout, quality: 100, width: size(:w))
+      # kit.to_png
+      # kit.to_file("public/#{file_name}.png")
+      layout
     end
   end
 end

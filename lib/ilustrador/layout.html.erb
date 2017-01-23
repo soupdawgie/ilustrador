@@ -5,12 +5,12 @@
   </head>
   <style>
     @font-face {
-      font-family: 'Casper';
-      src: url('/Users/vmasko/workspace/jvlife_card/Casper.ttf');
+      font-family: 'PT Sans';
+      src: asset-url('/assets/PT-Sans.ttf') format('truetype');
     }
     @font-face {
       font-family: 'Bitter';
-      src: url('/Users/vmasko/workspace/jvlife_card/Bitter-Regular.ttf');
+      src: asset-url('/assets/Bitter-Bold.otf') format('opentype');
     }
     html {
       color: #FFF;
@@ -26,33 +26,37 @@
       top: 0;
       left: 0;
       display: block;
-      width: 1120px;
-      height: 570px;
-      padding: 30px 40px 30px 40px;
+      width: 450px;
+      height: 237px;
       background-size: 100%;
-      background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%),
+      background: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 100%),
         url('<%= image %>');
       /*box-shadow:  0px 10px 26px 0px rgba(0,0,0,0.17);*/
     }
     .section {
+      margin: 15px 0px 15px 15px;
       display: inline-block;
-      clear: both;
-      font-family: Casper;
-      font-size: 26px;
+      font-family: 'PT Sans';
+      font-size: 14px;
+      border: 1px solid #FFF;
+      padding: 0 3px;
+      height: 17px;
+      line-height: 16px;
+      border-radius: 2px;
+
     }
     .title {
-      text-align: center;
-      font-family: Bitter;
-      font-size: 48px;
-      margin-top: 142px;
-      margin-left: 110px;
-      width: 825px;
+      width: 300px;
+      margin-left: 15px;
+      text-align: left;
+      font-family: 'Bitter';
+      /*font-weight: bold;*/
+      font-size: 24px;
     }
     .logo {
-      margin-top: -5px;
       display: inline-block;
       clear: both;
-      float: right;
+      margin: 90px 0px 0px 360px;
     }
   </style>
   <body>
@@ -61,11 +65,11 @@
         <div class='section'>
           <%= section %>
         </div>
-        <div class='logo'>
-          <img src='/Users/vmasko/workspace/jvlife_card/logo.png'>
-        </div>
         <div class='title'>
           <%= title %>
+        </div>
+        <div class='logo'>
+          <img src='/assets/logo.png'>
         </div>
       </div>
     </div>
