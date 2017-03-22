@@ -6,12 +6,13 @@
   <style>
     @font-face {
       font-family: 'PT Sans';
-      src: asset-url('/assets/PT-Sans.ttf') format('truetype');
+      src: url('/assets/PT-Sans.ttf') format('truetype');
     }
     @font-face {
       font-family: 'Bitter';
-      src: asset-url('/assets/Bitter-Bold.otf') format('opentype');
+      src: url('/assets/Bitter-Bold.ttf') format('truetype');
     }
+
     html {
       color: #FFF;
     }
@@ -26,32 +27,34 @@
       top: 0;
       left: 0;
       display: block;
-      width: 450px;
-      height: 237px;
+      width: 600px;
+      height: 315px;
+      max-width: 600px;
+      max-height: 315px;
       background-size: 100%;
       background: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 100%),
         url('<%= image %>');
       /*box-shadow:  0px 10px 26px 0px rgba(0,0,0,0.17);*/
     }
     .section {
-      margin: 15px 0px 15px 15px;
+      margin: 22px 0px 22px 22px;
       display: inline-block;
       font-family: 'PT Sans';
-      font-size: 14px;
+      font-size: 18px;
       border: 1px solid #FFF;
+      height: 18px;
       padding: 0 3px;
-      height: 17px;
-      line-height: 16px;
+      line-height: 15px;
       border-radius: 2px;
 
     }
     .title {
-      width: 300px;
-      margin-left: 15px;
+      width: 400px;
+      margin-left: 22px;
       text-align: left;
       font-family: 'Bitter';
       /*font-weight: bold;*/
-      font-size: 24px;
+      font-size: 32px;
     }
     .logo {
       display: inline-block;
@@ -68,9 +71,9 @@
         <div class='title'>
           <%= title %>
         </div>
-        <div class='logo'>
-          <img src='/assets/logo.png'>
-        </div>
+        <!-- <div class='logo'>
+          <img src='http://localhost:9292/assets/logo.png'>
+        </div> -->
       </div>
     </div>
   </body>

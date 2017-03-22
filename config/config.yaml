@@ -1,3 +1,10 @@
 size:
-  fb: [450, 237]
-  vk: [604, 317]
+  fb:
+    width: 600
+    height: 315
+  vk:
+    width: 604
+    height: 317
+url: 'http://localhost:3000'
+static_path: '/system/articles/announcements'
+image_path: '/Users/vmasko/workspace/application_name/public/system/articles/announcements'

@@ -1,3 +1,0 @@
-Dir.glob('public/*.png').each do |file|
-  File.delete(file)
-end

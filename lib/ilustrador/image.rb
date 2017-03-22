@@ -1,41 +1,29 @@
 require 'erb'
-require 'yaml'
 require 'imgkit'
-require 'securerandom'
 require 'base64'
 
 module Ilustrador
-  class Image
-    LAYOUT = File.read('lib/ilustrador/layout.html.erb')
-    CONFIG = YAML.load_file('config/config.yaml')
+  class Image < Ilustrador::Base
+    HEIGHT = CONFIG['size']['fb']['height']
+    WIDTH  = CONFIG['size']['fb']['width']
 
-    attr_reader :type, :title, :section, :image
+    attr_accessor :type, :section, :title, :image
 
     def initialize(params)
       @type    = params[:type]
-      @title   = params[:text]
-      @section = params[:category]
-      @image   = 'https://www.jvlife.ru' + Base64.urlsafe_decode64(params[:image])
-    end
-
-    def file_name
-      SecureRandom.urlsafe_base64(7)
-    end
-
-    def size(value)
-      return CONFIG['size'][type][0] if value == :w
-      return CONFIG['size'][type][1] if value == :h
+      @title   = params[:title]
+      @section = params[:section]
+      @image   = CONFIG['url'] + Base64.urlsafe_decode64(params[:image])
     end
 
     def layout
       ERB.new(LAYOUT).result(binding)
     end
 
-    def result
-      # kit = IMGKit.new(layout, quality: 100, width: size(:w))
-      # kit.to_png
-      # kit.to_file("public/#{file_name}.png")
-      layout
+    def render
+      kit = IMGKit.new(layout, quality: 100, width: WIDTH)
+      kit.to_png
+      kit
     end
   end
 end
