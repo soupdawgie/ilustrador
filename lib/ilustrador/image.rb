@@ -2,17 +2,20 @@ require 'erb'
 require 'yaml'
 require 'imgkit'
 require 'securerandom'
+require 'base64'
 
 module Ilustrador
   class Image
     LAYOUT = File.read('lib/ilustrador/layout.html.erb')
     CONFIG = YAML.load_file('config/config.yaml')
-    attr_reader :type, :text, :category
+
+    attr_reader :type, :title, :section, :image
 
     def initialize(params)
-      @type     = params[:type]
-      @text     = params[:text]
-      @category = params[:category]
+      @type    = params[:type]
+      @title   = params[:text]
+      @section = params[:category]
+      @image   = 'https://www.jvlife.ru' + Base64.urlsafe_decode64(params[:image])
     end
 
     def file_name
@@ -29,9 +32,10 @@ module Ilustrador
     end
 
     def result
-      kit = IMGKit.new(layout, quality: 100, width: size(:w))
-      kit.to_png
-      kit.to_file("public/#{file_name}.png")
+      # kit = IMGKit.new(layout, quality: 100, width: size(:w))
+      # kit.to_png
+      # kit.to_file("public/#{file_name}.png")
+      layout
     end
   end
 end
